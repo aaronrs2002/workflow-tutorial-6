@@ -37,6 +37,10 @@ div.animated[role="alert"] {
   padding: 0px
 }
 
+.btn.btn-primary.active {
+  color: yellow !important;
+}
+
 /*start loader animation*/
 /*start loader animation*/
 .loader {
