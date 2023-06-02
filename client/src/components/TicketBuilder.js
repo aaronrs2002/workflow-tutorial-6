@@ -81,7 +81,7 @@ const TicketBuilder = (props) => {
                     if (res.data.affectedRows >= 1) {
                         props.showAlert(document.querySelector("[name='ticketTitle']").value + " added.", "success");
                         props.getTickets(props.userEmail);
-                        resetFunction();
+                        resetFunction("add");
                     } else {
                         props.showAlert("Something went wrong", "danger");
                     }
@@ -116,7 +116,7 @@ const TicketBuilder = (props) => {
                     if (res.data.affectedRows >= 1) {
                         props.showAlert(document.querySelector("[name='ticketTitle']").value + " updated.", "success");
                         props.getTickets(props.userEmail);
-                        resetFunction();
+                        resetFunction("edit");
                     } else {
                         props.showAlert("Something went wrong", "danger");
                     }
@@ -142,7 +142,7 @@ const TicketBuilder = (props) => {
                 if (res.data.affectedRows > 0) {
                     props.showAlert("Success in deleting.", "info");
                     props.getTickets(props.userEmail);
-                    resetFunction();
+                    resetFunction("delete");
                     setConfirm((confirm) => "");
                 } else {
                     props.showAlert("That did not work.", "danger");
